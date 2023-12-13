@@ -1,0 +1,229 @@
+#infoContainer{
+	width : 1240px;
+}
+
+#infoMenuContainer{
+	margin-left : 30px;
+	margin-top : 50px;
+}
+
+#modal {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999; 
+}
+
+#modal #modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+    padding : 30px;
+}
+#inputInfo{
+	display : inline-block;
+}
+
+#modal #edit_img img {
+    max-width: 250px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    transform: translate(17px, 39px);
+}
+
+#profile-picture{
+	display: none;
+}
+
+#input-file-btn{
+	padding: 3px 10px;
+	background-color: lightgrey;
+	border-radius: 3px;
+	color: white;
+	cursor: pointer;
+	display : inline-block;
+	margin-left : 60px;
+	transform: translate(23px, -10px);
+	background-color: rgba(192, 192, 192, 0.5);
+}
+#input-file-btn:hover {
+	text-decoration: underline;
+}
+
+#bio {
+	overflow-y: auto;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+#photo {
+	display: inline-block;
+	margin : 40px 15px 15px 15px;
+}
+
+#photo img {
+	width: 250px;
+	height: 250px;
+	display: block;
+	margin: 0;
+	border-radius: 50%;
+	margin-left : 20px;
+	object-fit: cover;
+}
+
+#user-details {
+	display: inline-block;
+	padding: 20px;
+	color : white;
+	font-family: "Playpen_Sans variant0", Tofu;
+	transform: translateY(-120px);
+}
+#user-details h2, #user-details h4 {
+	font-weight: normal;
+	padding: 0 13px 0 5px;
+	margin: 2px 0;
+}
+#user-details h2 {
+	font-size: 2em;
+}
+#user-details h4 {
+	font-size: 1.3em;
+}
+#user-info {
+	background-color : #333;
+}
+#user-info-btn #upload {
+	margin-left : 764px;
+	border : 1px solid grey;
+	border-radius: 5px;
+	padding : 5px;
+	font-weight : bold;
+	font-size : small;
+	box-shadow : 0 4px 6px rgba(0,0,0,0.1);
+	font-family : Inter, sans-serif;
+	background-color : white; /*색깔 고민해보기*/
+	margin-top: 5px;
+}
+#user-info-btn #edit {
+	float:right;
+	margin-right : 50px;
+	border : 1px solid grey;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	font-family: Inter, sans-serif;
+	border-radius: 5px;
+	padding : 5px;
+	font-size : small;
+	font-weight : bold;
+	background-color : white;
+	margin-top: 5px;
+}
+
+#infoBtnContainer button {
+	border: none;
+	background-color: white;
+	font-size: large;
+	margin-left : 20px;
+	font-family: Inter,sans-serif;
+}
+
+.infoBtn{
+	cursor: pointer;
+}
+
+#edit_img {
+	display : inline-block;
+	width : 300px;
+}
+#writeNick #marginNick {
+	margin-bottom: -5px;
+}
+#user-info-btn button:hover {
+	text-decoration: underline;
+}
+#infoContainer .active{
+	color: red;
+	text-decoration: underline;
+}
+#user-details h2, h4 {
+	background-color: black;
+	display: inline-block; 
+}
+#writeNick #nick{
+	display: inline-block;
+}
+#writeNick button {
+	border : none;
+	background-color: rgba(192, 192, 192, 0.5);
+	color: white;
+	padding: 3px;
+	border-radius: 5px;
+	font-size: small;
+}
+#writeBio textarea {
+	margin-top: 5px;
+	height : 50px;
+	width: 250px;
+	resize : none;
+	overflow-y: scroll;
+}
+
+/*modal 안에 css 구성하자*/
+#modal-cancle {
+	border : 1px solid orange;
+	background-color:orange;
+	color : white;
+	border-radius: 5px;
+	padding : 3px;
+	margin : 5px;
+	margin-left: 420px;
+	transform: translate(13px, 1px);
+}
+#submit-btn {
+	border : 1px solid orange;
+	background-color : orange;
+	color : white;
+	border-radius: 5px;
+	padding : 3px;
+	margin : 10px;
+}
+#infoContainer h2 {
+	text-align: left;
+}
+#infoContainer .profileUpdateBtnContainer{
+	position: relative;
+}
+#infoContainer .notice {
+	position: absolute;
+    top: 26px;
+    left: 16px;
+}
+#withdrawalContainer {
+	position: relative;
+}
+#withdrawalContainer h3 {
+	text-align: center;
+}
+#withdrawalContainer #withdrawalPassword {
+	margin: 25px 0 0 179px;
+    width: 200px;
+}
+#withdrawalContainer #modal-cancle {
+	float: right;
+}
+#withdrawal-cancle {
+	position: absolute;
+    bottom: 0px;
+    right: 0px;
+	
+}

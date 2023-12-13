@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+
+	<select id="selectOneById" resultType="UsersVO" parameterType="String">
+		SELECT 
+			USER_ID, PWD, NICKNAME, EMAIL, BIO, PICTURE, LOGIN, REG_DATE, SALT 
+		FROM 
+			USERS 
+		WHERE 
+			USER_ID = #{userId}
+	</select>
+	
+	<select id="selectOneByEmail" resultType="UsersVO" parameterType="String">
+		SELECT 
+			USER_ID, PWD, NICKNAME, EMAIL, BIO, PICTURE, LOGIN, REG_DATE, SALT 
+		FROM 
+			USERS 
+		WHERE 
+			EMAIL = #{email}
+	</select>
+	
+	<select id="selectOneByNickname" resultType="UsersVO" parameterType="String">
+		SELECT 
+			USER_ID, PWD, NICKNAME, EMAIL, BIO, PICTURE, LOGIN, REG_DATE, SALT 
+		FROM 
+			USERS 
+		WHERE 
+			NICKNAME = #{nickname}
+	</select>
+	
+	<insert id="insertOne" parameterType="UsersVO">
+		INSERT INTO USERS
+			(USER_ID, PWD, NICKNAME, EMAIL, BIO, PICTURE, LOGIN, REG_DATE, SALT)
+		VALUES
+			(#{userId}, #{pwd}, #{nickname}, #{email}, null, #{picture}, UPPER('FALSE'), SYSDATE, #{salt})
+	</insert>
+	
+	<update id="updatePassword" parameterType="UsersVO">
+		UPDATE USERS SET PWD = #{pwd} WHERE USER_ID = #{userId}
+	</update>
+	
+	<delete id="deleteOne" parameterType="String">
+		DELETE FROM USERS WHERE USER_ID = #{userId}
+	</delete>
+	
+</mapper>

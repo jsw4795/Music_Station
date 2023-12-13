@@ -1,0 +1,126 @@
+#upload_container {
+	border: 1px solid #f2f2f2;
+	border-radius: 2px;
+	margin: 0 0 5px;
+	background-color: #fff;
+	margin-left: 70px;
+	margin-right: 70px;
+	box-shadow: 0 2px 12px -5px rgba(0, 0, 0, .1);
+	text-align: center;
+	position: relative;
+	display: block;
+}
+#uploadTitle{
+	text-align: center;
+	margin-top: 160px;
+}
+#upload_beforeChooser {
+	display: block;
+	text-align: center;
+	color: #333;
+}
+
+#uploadMain_content {
+	padding: 100px;
+	display: block;
+	text-align: center;
+	transition: margin .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+#upload_container .uploadMain_title {
+	display: block;
+	text-align: center;
+}
+
+#upload_container .uploadMain_chooser {
+	margin: 16px 0 12px;
+}
+
+#upload_container .chooseFiles {
+	text-align: center;
+}
+
+#upload_container .chooseFiles_input {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+#upload_container input {
+	background: #fff;
+}
+
+#upload {
+	background-color: #f50;
+	border-color: #f50;
+	color: #fff;
+	display: inline-block;
+	position: relative;
+	height: 30px;
+	margin: 0;
+	padding: 2px 11px 2px 10px;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 15px;
+	line-height: 20px;
+	white-space: nowrap;
+	font-weight: 100;
+	text-align: center;
+	vertical-align: initial;
+	box-sizing: border-box;
+}
+
+.chooseFiles_btn {
+	background-color: #f50;
+	border-color: #f50;
+	color: #fff;
+	display: inline-block;
+	position: relative;
+	height: 26px;
+	margin: 0;
+	padding: 2px 11px 2px 10px;
+	border: 1px solid #e5e5e5;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: 15px;
+	line-height: 20px;
+	white-space: nowrap;
+	font-weight: 100;
+	text-align: center;
+	vertical-align: initial;
+	box-sizing: border-box;
+}
+
+/*드롭영역 스타일*/
+#uploadDropArea {
+	border: 2px dashed #ccc;
+	padding: 20px;
+	text-align: center;
+	background-color: #f9f9f9;
+	cursor: pointer;
+}
+
+#upload_container img {
+	width: 300px;
+	height: 300px;
+}
+
+#music_img {
+	display: inline-block;
+}
+
+#content {
+	display: inline-block;
+	margin: 30px;
+}
+
+/*modal 형식으로*/
+.activeUpload_form {
+	display : none;
+}

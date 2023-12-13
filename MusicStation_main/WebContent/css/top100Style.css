@@ -1,0 +1,170 @@
+#top100Container {
+	width: 1240px;
+	min-height: 1080px;
+	text-align: center;
+	height: max-content;
+}
+#top100Container h1 {
+	margin: 20px;
+}
+#top100Container table {
+	border-spacing: 0;
+	display: inline-block;
+	width: 1000px;
+}
+#top100Container .wrap {
+	position: relative;
+}
+#top100Container .none {
+    position: absolute;
+    top: -5000em;
+    left: 0;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+#top100Container th, #top100Container td {
+    text-align: left;
+    vertical-align: middle;
+}
+#top100Container th {
+    height: 48px;
+    color: #606060;
+    font-size: 13px;
+    font-family: "돋움",Dotum,Arial,sans-serif;
+}
+#top100Container td .rank {
+    display: inline-block;
+    padding-top: 5px;
+    color: #333;
+    font-size: 18px;
+    font-family: 'Nunito',sans-serif;
+}
+#top100Container tbody td {
+	border-bottom: 1px solid rgb(215, 215, 215);
+}
+#top100Container .wrap_song_info {
+    display: inline-block;
+    width: 100%;
+    margin-left: 12px;
+    vertical-align: middle;
+}
+#top100Container .ellipsis.rank01 {
+    max-width: 200px;
+}
+#top100Container .ellipsis.rank01 a {
+    color: #333;
+    font-size: 14px;
+}
+#top100Container .ellipsis.rank02 {
+    max-width: 180px;
+}
+#top100Container .ellipsis.rank02 a {
+    color: #969696;
+    font-size: 14px;
+}
+#top100Container .ellipsis.rank03 {
+    max-width: 170px;
+}
+#top100Container .ellipsis.rank03 a {
+    color: #969696;
+    font-size: 14px;
+}
+#top100Container tbody tr:hover td{
+	background-color: rgb(225, 225, 225);
+}
+#top100Container .image_typeAll img {
+	margin-top: 5px;
+}
+#top100Container .top100PlayContainer {
+	position: absolute;
+	top: 5px;
+	background-color: rgba(145, 145, 145, 0.5);
+	width: 60px;
+	height: 60px;
+	display: none;
+}
+#top100Container tr:hover .top100PlayContainer {
+	display: inline-block;
+}
+#top100Container .top100PlayContainer .top100Play {
+	margin: 17.5px 0px 0px 17.5px;
+}
+#top100Container .artist-small {
+	font-weight: normal;
+}
+#chooseTopContainer {
+	text-align: center;
+}
+
+.chooseTopBtn {
+	cursor: pointer;
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	margin: 0 10px 0 10px;
+	line-height: 40px;
+}
+.chooseTopBtn > span {
+	font-size: 18px;
+}
+.chooseTopBtn.active {
+	background-color: rgb(249, 249, 249);
+}
+.chooseTopBtn.active > span {
+	font-weight: bold;
+}
+
+.btn {
+    
+    cursor: pointer;
+}
+.button_icons.top100AddNextMusic {
+    width: 25px;
+    height: 25px;
+    background-position: -98px -30px;
+}
+.button_icons.top100AddPlayList {
+    width: 25px;
+    height: 25px;
+    background-position: -45px -30px;
+}
+.button_icons.top100Play {
+    width: 25px;
+    height: 25px;
+    background-position: 0 -30px;
+}
+.button_etc.like {
+	width: 25px;
+    height: 25px;
+    visibility: visible;
+    overflow: hidden;
+}
+.ellipsis {
+    display: inline-block;
+    padding-right: 1px;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    overflow: hidden;
+}
+.pd_l_12 {
+    padding-left: 12px
+}
+.pd_l_30 {
+    padding-left: 30px
+}
+.pd_l_40 {
+    padding-left: 40px
+}
+.t_right {
+	text-align: left;
+}
+.t_center {
+    text-align: center;
+}

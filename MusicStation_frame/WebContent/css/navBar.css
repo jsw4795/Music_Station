@@ -1,0 +1,138 @@
+/* 모든 기본 여백 제거 */ 
+*, html, body {
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+}
+body {
+	min-height: 100%;
+}
+/* ajax로 받은 HTML 태그가 들어갈 컨테이너 */
+#container {
+	width: 1240px;
+	min-height: 1080px;
+	/*background-color: lightblue;*/
+	margin: 0 auto;
+}
+	
+/* 상단 네비게이션 바에서 화면 가로 전체 길이로 보여질 배경 */
+#navBackground {
+	width: 100%;
+	min-width: 1240px;
+	height: 46px;
+	position: sticky;
+	top: 0px;
+	background-color: gray;
+	z-index: 999;
+}
+/* 상단 네비게이션 바에서 실제 컨텐츠 들이 들어갈 컨테이너 */
+#navContainer {
+	width: 1240px;
+	height: 30px;
+	margin: auto;
+	text-align: center;
+	border-collapse: collapse;
+}
+h1, h2 {
+	text-align: center;
+}
+.navBtn {
+	display: inline-block;
+	width: 100px;
+	height: 22px;
+	padding: 12px 0;
+	line-height: 22px;
+	font-weight: 600;
+	border-left: 1px solid rgb(89, 89, 89);
+	border-right: 1px solid rgb(89, 89, 89);
+	margin: 0 -0.5px;
+}
+#homeBtn, #topBtn {
+	float: left;
+}
+#uploadBtn, #nowProfileContainer {
+	float: right;
+}
+#searchContainer {
+	display: inline-block;
+	position: relative;
+	width: 500px;
+}
+#keyword {
+	width: 500px;
+	height: 30px;
+	border-radius: 8px;
+	border: 1px solid rgb(89, 89, 89);
+	margin-top: 7px;
+	font-size: 1.1em;
+	padding-left: 10px;
+}
+#searchBtn {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	right: 5px;
+	top: 10px;
+}
+#nowProfileContainer {
+	position: relative;
+	width: 70px;
+	display: inline-block;
+	height: 22px;
+	padding: 12px 0;
+	line-height: 22px;
+	font-weight: 600;
+	border-left: 1px solid rgb(89, 89, 89);
+	border-right: 1px solid rgb(89, 89, 89);
+	margin: 0 -0.5px;
+}
+#nowProfileContainer > img {
+	position: absolute;
+	top: 18px;
+	right: 9px;
+	width: 10px;
+	height: 10px;
+	float: right;
+}
+#profilePicContainer {
+	position: absolute;
+	top: 5px;
+	left: 8px;
+	width: 35px;
+	height: 35px;
+	border-radius: 50px;
+	overflow: hidden;
+}
+#nowProfilePic {
+	width: 35px;
+	height: 35px;
+}
+#navContainer .active {
+	background-color: white;
+}
+#profileMenuContainer {
+	position: absolute;
+	top: 46px;
+	width: 170px;
+	height: 120px;
+	border: 1px solid lightgray;
+	background-color: white;
+}
+#profileMenuContainer .profileMenuBtn {
+	height: 40px;
+}
+#profileMenuContainer .profileMenuBtn:hover {
+	background-color: rgb(198, 198, 198);
+}
+#profileMenuContainer .profileMenuBtn img {
+	width: 25px;
+	height: 25px;
+	float: left;
+	margin: 7.5px 10.5px 0 7.5px;
+}
+#profileMenuContainer .profileMenuBtn span {
+	float: left;
+	line-height: 40px;
+}

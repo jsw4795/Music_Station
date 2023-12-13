@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="musics">
+
+	<!-- Music Table -->
+	<select id="selectMusic" resultType="MusicVO" parameterType="string">
+		SELECT M.*, U.NICKNAME ARTIST_NICKNAME
+		FROM MUSIC M
+		INNER JOIN USERS U
+		ON M.ARTIST = U.USER_ID
+		WHERE ARTIST = #{userId}
+	</select>
+	
+	
+	<!--인기있는 음악 순 Music table -->
+	<select id="getPopularMusic" resultType="MusicVO">
+		SELECT MUSIC.MUSIC_ID, TITLE, ARTIST, INFO 
+		FROM MUSIC INNER JOIN LIKES ON USER_ID = USER_ID
+	</select>
+	
+	<!--음악 업로드하기 -->
+	<insert id="uploadMusic" parameterType="MusicVO">
+		INSERT INTO MUSIC (MUSIC_ID, TITLE, ARTIST, INFO, UPLOAD_DATE, PICTURE, FILE_NAME)
+		VALUES (MUSIC_ID_SEQ.NEXTVAL, #{title}, #{artist}, #{info}, SYSDATE, #{picture}, #{fileName})
+	</insert>
+	
+</mapper>

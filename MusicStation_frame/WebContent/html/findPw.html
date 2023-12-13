@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Find PW</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="./html/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./html/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./html/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./html/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./html/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="./html/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./html/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./html/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="./html/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./html/css/util.css">
+	<link rel="stylesheet" type="text/css" href="./html/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						Find PW
+					</span>
+					<span class="login100-form-title p-b-48">
+						<!--<i class="zmdi zmdi-font"></i>-->
+						<img src="/frame/html/images/icons/icon-soundCloud.png" alt="" />
+					</span>
+					<!-- 아이디 -->
+					<div class="wrap-input100 validate-input" data-validate = "Enter UserID">
+						<input id="userId" class="input100" type="text" name="userId">
+						<span class="focus-input100" data-placeholder="User ID"></span>
+					</div>
+					<!-- 아이디 확인 버튼 -->
+					<div id="userIdCheckContainer">
+						<span></span>
+						<button id="userIdCheckBtn" type="button" class="btn btn-primary btn-sm">Enter</button>
+					</div>
+					
+					<div id="emailContainer" hidden="hidden">
+						<!-- 이메일 -->
+						<div class="wrap-input100 validate-input" data-ok="Valid Email" data-validate = "Enter valid email">
+							<input id="email" class="input100" type="email" name="email">
+							<span class="focus-input100" data-placeholder="Email"></span>
+						</div>
+						
+						<div>
+							<!-- 코드 전송 버튼 -->
+							<div id="emailCodeSendContainer">
+								<span>Send Code</span>
+								<button id="emailCodeSendBtn" type="button" class="btn btn-primary btn-sm">Send</button>
+							</div>
+							<!-- 코드 입력 인풋 -->
+							<div id="emailCodeContainer" hidden="hidden" >
+								<div id="emailCodeInputContainer" class="wrap-input100" >
+									<input id="emailCode" class="input100" type="text" name="emailCode">
+									<span class="focus-input100" data-placeholder="Code"></span>
+								</div>
+								<button id="codeCheckBtn" class="btn btn-primary btn-sm">Enter</button>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 비밀번호 재설정 컨테이너 -->
+					<div id="resetPwContainer" hidden="hidden">
+						<!-- 비밀번호 -->
+						<div class="wrap-input100 validate-input" data-ok="ok" data-validate="eng, num, longer than 7">
+							<span class="btn-show-pass">
+								<i class="zmdi zmdi-eye"></i>
+							</span>
+							<input pattern="[a-zA-Z0-9]" id="password" class="input100" type="password" name="pass">
+							<span class="focus-input100" data-placeholder="New Password"></span>
+						</div>
+						<!-- 비밀번호 확인 -->
+						<div class="wrap-input100 validate-input" data-ok="ok" data-validate="eng, num, longer than 7">
+							<span class="btn-show-pass">
+								<i class="zmdi zmdi-eye"></i>
+							</span>
+							<input pattern="[a-zA-Z0-9]" id="passwordCheck" class="input100" type="password" name="pass">
+							<span class="focus-input100" data-placeholder="New Password Check"></span>
+						</div>
+						<div id="resetPwBtnContainer">
+							<span>Reset Password</span>
+							<button id="resetPwBtn" type="button" class="btn btn-primary btn-sm disabled" disabled>Enter</button>
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Do you want to go back? 
+						</span>
+
+						<a id="goLogin" class="txt2" href="#">
+							Login
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="./html/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./html/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./html/vendor/bootstrap/js/popper.js"></script>
+	<script src="./html/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./html/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./html/vendor/daterangepicker/moment.min.js"></script>
+	<script src="./html/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="./html/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="./html/js/main.js"></script>
+	
+	<!-- 비밀번호 찾기 기능 -->
+	<script src="./html/js/findPw.js"></script>
+</body>
+</html>

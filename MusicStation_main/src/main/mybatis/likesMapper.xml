@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="likes">
+	
+	<select id="selectLikeMusicsByuserId" resultType="int" parameterType="String">
+		SELECT MUSIC_ID FROM LIKES 
+		WHERE 
+			TYPE = 'MUSIC' AND USER_ID = #{userId}
+	</select>
+	
+	<select id="selectCountOfLikeMusicByUserIdAndMusicId" resultType="int" parameterType="map">
+		SELECT COUNT(MUSIC_ID) COUNT FROM LIKES 
+		WHERE 
+			TYPE = 'MUSIC' AND USER_ID = #{userId} AND MUSIC_ID = #{musicId}
+	</select>
+	
+	<insert id="insertLikeMusic" parameterType="map">
+		INSERT INTO LIKES
+			(USER_ID, MUSIC_ID, TYPE, LIKE_DATE)
+		VALUES
+			(#{userId}, #{musicId}, 'MUSIC', SYSDATE)
+	</insert>
+	
+	<delete id="deleteLikeMusic" parameterType="map">
+		delete from likes
+		where
+			user_id = #{userId} and music_id = #{musicId}
+	</delete>
+	
+</mapper>

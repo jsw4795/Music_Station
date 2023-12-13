@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Likes">
+
+	<select id="selectLikes" resultType="MusicVO" parameterType="string">
+		SELECT M.MUSIC_ID, M.TITLE, M.ARTIST, M.INFO, M.PICTURE, u.nickname artist_nickname
+		FROM 
+		    MUSIC M 
+		INNER JOIN 
+		    LIKES L 
+		ON 
+		    M.MUSIC_ID = L.MUSIC_ID AND L.USER_ID = #{userId}
+		INNER JOIN
+		    USERS U
+		ON
+		    M.ARTIST = U.USER_ID
+	</select>
+	
+</mapper>

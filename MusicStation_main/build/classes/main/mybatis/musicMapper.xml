@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="music">
+	
+	<select id="selectOneByMusicId" resultType="MusicVO" parameterType="String">
+		SELECT 
+			M.MUSIC_ID MUSIC_ID, M.TITLE TITLE, M.ARTIST ARTIST, M.INFO INFO, M.UPLOAD_DATE UPLOAD_DATE, M.PICTURE PICTURE, M.FILE_NAME FILE_NAME, U.NICKNAME ARTIST_NICKNAME
+		FROM 
+			MUSIC M
+		INNER JOIN 
+			USERS U 
+		ON 
+			M.ARTIST = U.USER_ID
+		WHERE 
+			MUSIC_ID = #{musicId}
+	</select>
+	
+	<select id="selectAll" resultType="MusicVO" >
+		SELECT 
+			M.MUSIC_ID MUSIC_ID, M.TITLE TITLE, M.ARTIST ARTIST, M.INFO INFO, M.UPLOAD_DATE UPLOAD_DATE, M.PICTURE PICTURE, M.FILE_NAME FILE_NAME, U.NICKNAME ARTIST_NICKNAME
+		FROM 
+			MUSIC M
+		INNER JOIN 
+			USERS U 
+		ON 
+			M.ARTIST = U.USER_ID
+	</select>
+	
+	<select id="selectManyByViewsDESC" resultType="MusicVO" parameterType="int">
+		SELECT MUSIC_ID, TITLE, ARTIST, INFO, UPLOAD_DATE, PICTURE, FILE_NAME, VIEWS, ARTIST_NICKNAME
+	    FROM
+	        (SELECT 
+				M.MUSIC_ID MUSIC_ID, M.TITLE TITLE, M.ARTIST ARTIST, M.INFO INFO, M.UPLOAD_DATE UPLOAD_DATE, M.PICTURE PICTURE, M.FILE_NAME FILE_NAME, M.VIEWS VIEWS, U.NICKNAME ARTIST_NICKNAME
+			FROM
+	   			MUSIC M
+			INNER JOIN 
+				USERS U 
+			ON 
+				M.ARTIST = U.USER_ID
+	        ORDER BY 
+	        	VIEWS DESC, UPLOAD_DATE DESC)
+	    WHERE
+	        ROWNUM <![CDATA[<=]]> #{howMany}
+	</select>
+	
+	<!-- 유저가 최근에 들은 노래 n개를 가져온다 -->
+	<select id="selectManyByRecentPlay" resultType="MusicVO" parameterType="map">
+		SELECT MUSIC_ID, TITLE, ARTIST, INFO, UPLOAD_DATE, PICTURE, FILE_NAME, VIEWS, ARTIST_NICKNAME
+	    FROM
+	        (SELECT 
+				M.MUSIC_ID MUSIC_ID, M.TITLE TITLE, M.ARTIST ARTIST, M.INFO INFO, M.UPLOAD_DATE UPLOAD_DATE, M.PICTURE PICTURE, M.FILE_NAME FILE_NAME, M.VIEWS VIEWS, U.NICKNAME ARTIST_NICKNAME, L.PLAY_DATE PLAY_DATE
+			FROM
+	        MUSIC M
+	        INNER JOIN
+	            MUSIC_LAST_LOG L
+	        ON M.MUSIC_ID = L.MUSIC_ID
+			INNER JOIN 
+				USERS U 
+			ON 
+				M.ARTIST = U.USER_ID
+	        WHERE
+	            L.USER_ID = #{userId}
+			ORDER BY 
+	            PLAY_DATE DESC)
+	    WHERE
+	        ROWNUM <![CDATA[<=]]> #{howMany}
+	</select>
+	
+	<select id="selectManyByRecentUpload" resultType="MusicVO" parameterType="int">
+		SELECT 
+			M.MUSIC_ID MUSIC_ID, M.TITLE TITLE, M.ARTIST ARTIST, M.INFO INFO, M.UPLOAD_DATE UPLOAD_DATE, M.PICTURE PICTURE, M.FILE_NAME FILE_NAME, U.NICKNAME ARTIST_NICKNAME
+		FROM
+			(SELECT ROWNUM, MUSIC_ID, TITLE, ARTIST, INFO, UPLOAD_DATE, PICTURE, FILE_NAME 
+			FROM 
+				MUSIC 
+			ORDER BY 
+				UPLOAD_DATE DESC) M
+		INNER JOIN 
+			USERS U 
+		ON 
+			M.ARTIST = U.USER_ID
+		WHERE ROWNUM <![CDATA[<=]]> ${howMany}
+	</select>
+	
+	<select id="selectManyByRecentWeekViewsDesc" resultType="MusicVO" parameterType="int">
+		SELECT  M.MUSIC_ID MUSIC_ID, M.TITLE TITLE, M.ARTIST ARTIST, M.INFO INFO, M.UPLOAD_DATE UPLOAD_DATE, M.PICTURE PICTURE, M.FILE_NAME FILE_NAME, NVL(C.COUNT, 0) VIEWS, U.NICKNAME ARTIST_NICKNAME
+		FROM
+   			MUSIC M 
+		LEFT JOIN 
+		    (SELECT MUSIC_ID, COUNT(*) AS COUNT FROM MUSIC_LOG where play_date >= TO_CHAR(SYSDATE-7,'YYYYMMDD') GROUP BY MUSIC_ID) C
+		ON 
+			M.MUSIC_ID = C.MUSIC_ID
+		INNER JOIN 
+			USERS U 
+		ON 
+			M.ARTIST = U.USER_ID
+		WHERE
+		    ROWNUM <![CDATA[<=]]> ${howMany}
+		ORDER BY 
+			VIEWS DESC, UPLOAD_DATE DESC
+	</select>
+	
+</mapper>

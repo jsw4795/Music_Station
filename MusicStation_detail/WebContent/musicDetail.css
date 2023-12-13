@@ -1,0 +1,85 @@
+.musicdetail {
+	width: 1240px;
+	height: 300px;
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+}
+
+.musicdetail::before {
+	content: "";
+	width: 1240px;
+	height: 300px;
+	position: absolute;
+	background-color: #fff;
+	opacity: 0.5;
+	bottom: 0px;
+}
+
+.musicimg {
+	float: right;
+	position: relative;
+	right: 20px;
+	top: 3px;
+}
+
+.musicinfo {
+	position: relative;
+	left: 30px;
+}
+
+.comment {
+	width: 1240px;
+	display: table;
+	vertical-align: middle;
+	margin-top: 25px;
+}
+
+.artistprofile {
+	display: inline-table;
+	position: relative;
+	width: 150px;
+}
+.artistprofile img {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+}
+.comm {
+	display: inline-table;
+	position: relative;
+	width: 1050px;
+	float: right;
+	border: 1px solid #818B8D;
+	bottom: 170px;
+
+}
+
+#commentWritingContainer {
+	margin-top: 25px;
+}
+
+#musicInfo {
+	margin-top: 15px;
+}
+
+#musicTitleArtistContainer {
+	position: relative;
+	height: 60px;
+}
+
+#playBtnInDetail {
+	width: 50px;
+}
+
+#musicTitle {
+	position: absolute;
+	top: 0px;
+	left: 55px;
+}
+
+#musicArtist {
+	position: absolute;
+	top: 35px;
+	left: 55px;
+}

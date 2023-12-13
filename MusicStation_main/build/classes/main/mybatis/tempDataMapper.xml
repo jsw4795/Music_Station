@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tempData">
+	
+	<!-- selectKey를 이용해서 입력될 인덱스를 vo에 설정하고 insert한다 -->
+	<insert id="insert" parameterType="TempDataVO">
+		<selectKey keyProperty="idx" resultType="int" order="BEFORE">
+		SELECT NVL(MAX(IDX), 0)+1 FROM TEMPDATA
+		</selectKey>
+		
+		INSERT INTO TEMPDATA VALUES (#{idx}, #{value})
+	</insert>
+	
+	<select id="one" resultType="String" parameterType="String">
+		SELECT VALUE FROM TEMPDATA WHERE IDX = #{idx}
+	</select>
+	
+	<delete id="delete" parameterType="String">
+		DELETE FROM TEMPDATA WHERE IDX = #{idx}
+	</delete>
+	
+</mapper>
