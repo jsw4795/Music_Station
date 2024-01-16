@@ -47,7 +47,7 @@
 > 
 > - 페이지 하단에 있는 재생목록에 원하는 곡들을 넣어놓고 들을 수 있습니다.
 
-![2차 음악 재생 시연](https://github.com/jsw4795/Music_Station/assets/33516979/aba58a4d-d8a6-49d1-90ec-54e37071bad3)
+![2차 음악 재생 시연2](https://github.com/jsw4795/Music_Station/assets/33516979/c582ed9a-645e-4862-8765-95b92df4e0a8)
 
 ### 2. 음악 업로드
 
